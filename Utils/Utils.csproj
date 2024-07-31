@@ -10,7 +10,9 @@
 
   <PropertyGroup>
     <Version>1.0.0</Version>
+    <Authors>AlexSJC</Authors>
     <Description>Some common utilities.</Description>
+    <Copyright>Copyright © $(Authors) $([System.DateTime]::Now.Year)</Copyright>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/SJC08/Utils</RepositoryUrl>
