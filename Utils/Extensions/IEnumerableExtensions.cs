@@ -1,5 +1,8 @@
 ﻿namespace Asjc.Utils.Extensions
 {
+    /// <summary>
+    /// Provides some extension methods.
+    /// </summary>
     public static class IEnumerableExtensions
     {
         /// <summary>

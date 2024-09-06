@@ -2,6 +2,9 @@
 
 namespace Asjc.Utils.Extensions
 {
+    /// <summary>
+    /// Provides some extension methods.
+    /// </summary>
     public static class ObjectExtensions
     {
         public static object? ChangeType(this object? value, Type conversionType)

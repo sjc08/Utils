@@ -2,6 +2,9 @@
 
 namespace Asjc.Utils
 {
+    /// <summary>
+    /// A static class for trying to execute a delegate.
+    /// </summary>
     public static class Tryer
     {
         /// <summary>

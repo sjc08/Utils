@@ -2,6 +2,9 @@
 
 namespace Asjc.Utils.Extensions
 {
+    /// <summary>
+    /// Provides some extension methods.
+    /// </summary>
     public static class StringExtensions
     {
 #if NETSTANDARD2_0 || NET472
