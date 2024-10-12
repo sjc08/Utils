@@ -3,14 +3,14 @@
 namespace Asjc.Utils
 {
     /// <summary>
-    /// A static class for trying to execute a delegate.
+    /// A static class for trying to invoke a delegate.
     /// </summary>
     public static class Tryer
     {
         /// <summary>
-        /// Trys to execute <paramref name="action"/>.
+        /// Trys to invoke <paramref name="action"/>.
         /// </summary>
-        /// <param name="action">The delegate to be executed.</param>
+        /// <param name="action">The delegate to be invoked.</param>
         /// <returns>A <see langword="bool"/> indicating whether no exception has occurred.</returns>
         public static bool Try(Action action)
         {
@@ -26,9 +26,9 @@ namespace Asjc.Utils
         }
 
         /// <summary>
-        /// Trys to execute <paramref name="action"/>.
+        /// Trys to invoke <paramref name="action"/>.
         /// </summary>
-        /// <param name="action">The delegate to be executed.</param>
+        /// <param name="action">The delegate to be invoked.</param>
         /// <param name="onError">The delegate to be called when an exception occurs.</param>
         /// <returns>A <see langword="bool"/> indicating whether no exception has occurred.</returns>
         public static bool Try(Action action, Action<Exception> onError)
@@ -46,10 +46,10 @@ namespace Asjc.Utils
         }
 
         /// <summary>
-        /// Trys to execute <paramref name="func"/>.
+        /// Trys to invoke <paramref name="func"/>.
         /// </summary>
         /// <typeparam name="T">The type of the return value of <paramref name="func"/>.</typeparam>
-        /// <param name="func">The delegate to be executed.</param>
+        /// <param name="func">The delegate to be invoked.</param>
         /// <returns>The return value of <paramref name="func"/> if no exception has occurred; otherwise, <see langword="default"/>.</returns>
         public static T? Try<T>(Func<T> func)
         {
@@ -64,10 +64,10 @@ namespace Asjc.Utils
         }
 
         /// <summary>
-        /// Trys to execute <paramref name="func"/>.
+        /// Trys to invoke <paramref name="func"/>.
         /// </summary>
         /// <typeparam name="T">The type of the return value of <paramref name="func"/>.</typeparam>
-        /// <param name="func">The delegate to be executed.</param>
+        /// <param name="func">The delegate to be invoked.</param>
         /// <param name="onError">The delegate to be called when an exception occurs.</param>
         /// <returns>The return value of <paramref name="func"/> if no exception has occurred; otherwise, <see langword="default"/>.</returns>
         public static T? Try<T>(Func<T> func, Action<Exception> onError)
@@ -84,10 +84,10 @@ namespace Asjc.Utils
         }
 
         /// <summary>
-        /// Trys to execute <paramref name="func"/>.
+        /// Trys to invoke <paramref name="func"/>.
         /// </summary>
         /// <typeparam name="T">The type of the return value of <paramref name="func"/>.</typeparam>
-        /// <param name="func">The delegate to be executed.</param>
+        /// <param name="func">The delegate to be invoked.</param>
         /// <param name="onError">The delegate to be called when an exception occurs.</param>
         /// <returns>The return value of <paramref name="func"/> if no exception has occurred; otherwise, the return value of <paramref name="onError"/>.</returns>
         public static T? Try<T>(Func<T> func, Func<Exception, T?> onError)
@@ -103,10 +103,10 @@ namespace Asjc.Utils
         }
 
         /// <summary>
-        /// Trys to execute <paramref name="func"/>.
+        /// Trys to invoke <paramref name="func"/>.
         /// </summary>
         /// <typeparam name="T">The type of the return value of <paramref name="func"/>.</typeparam>
-        /// <param name="func">The delegate to be executed.</param>
+        /// <param name="func">The delegate to be invoked.</param>
         /// <param name="result">The return value of <paramref name="func"/> if no exception has occurred; otherwise, <see langword="default"/>.</param>
         /// <returns>A <see langword="bool"/> indicating whether no exception has occurred.</returns>
 #if NETSTANDARD2_1 || NET8_0
@@ -128,10 +128,10 @@ namespace Asjc.Utils
         }
 
         /// <summary>
-        /// Trys to execute <paramref name="func"/>.
+        /// Trys to invoke <paramref name="func"/>.
         /// </summary>
         /// <typeparam name="T">The type of the return value of <paramref name="func"/>.</typeparam>
-        /// <param name="func">The delegate to be executed.</param>
+        /// <param name="func">The delegate to be invoked.</param>
         /// <param name="onError">The delegate to be called when an exception occurs.</param>
         /// <param name="result">The return value of <paramref name="func"/> if no exception has occurred; otherwise, <see langword="default"/>.</param>
         /// <returns>A <see langword="bool"/> indicating whether no exception has occurred.</returns>
@@ -155,10 +155,10 @@ namespace Asjc.Utils
         }
 
         /// <summary>
-        /// Trys to execute <paramref name="func"/>.
+        /// Trys to invoke <paramref name="func"/>.
         /// </summary>
         /// <typeparam name="T">The type of the return value of <paramref name="func"/>.</typeparam>
-        /// <param name="func">The delegate to be executed.</param>
+        /// <param name="func">The delegate to be invoked.</param>
         /// <param name="onError">The delegate to be called when an exception occurs.</param>
         /// <param name="result">The return value of <paramref name="func"/> if no exception has occurred; otherwise, the return value of <paramref name="onError"/>.</param>
         /// <returns>A <see langword="bool"/> indicating whether no exception has occurred.</returns>
