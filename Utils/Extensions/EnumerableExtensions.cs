@@ -3,7 +3,7 @@
     /// <summary>
     /// Provides some extension methods.
     /// </summary>
-    public static class IEnumerableExtensions
+    public static class EnumerableExtensions
     {
         /// <summary>
         /// Determines whether two sequences have the same content by using the default equality comparer for their type. The order will be ignored.
@@ -14,6 +14,8 @@
         /// <returns><see langword="true"/> if the two source sequences are of equal length and their contents are equal according to the default equality comparer for their type; otherwise, <see langword="false"/>.</returns>
         public static bool ContentEqual<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second)
         {
+            if (first == second)
+                return true;
             if (first.Count() != second.Count())
                 return false;
             return first.OrderBy(x => x).SequenceEqual(second.OrderBy(x => x));
@@ -29,6 +31,8 @@
         /// <returns><see langword="true"/> if the two source sequences are of equal length and their contents are equal according to <paramref name="comparer"/>; otherwise, <see langword="false"/>.</returns>
         public static bool ContentEqual<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource>? comparer)
         {
+            if (first == second)
+                return true;
             if (first.Count() != second.Count())
                 return false;
             return first.OrderBy(x => x).SequenceEqual(second.OrderBy(x => x), comparer);

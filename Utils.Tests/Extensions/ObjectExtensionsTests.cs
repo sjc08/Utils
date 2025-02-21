@@ -1,4 +1,6 @@
-﻿namespace Asjc.Utils.Extensions.Tests
+﻿using Asjc.Utils.Extensions;
+
+namespace Asjc.Utils.Tests.Extensions
 {
     [TestClass]
     public class ObjectExtensionsTests

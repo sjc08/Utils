@@ -109,7 +109,7 @@ namespace Asjc.Utils
         /// <param name="func">The delegate to be invoked.</param>
         /// <param name="result">The return value of <paramref name="func"/> if no exception has occurred; otherwise, <see langword="default"/>.</param>
         /// <returns>A <see langword="bool"/> indicating whether no exception has occurred.</returns>
-#if NETSTANDARD2_1 || NET8_0
+#if NET8_0 || NETCOREAPP3_1 || NETSTANDARD2_1
         public static bool Try<T>(Func<T> func, [MaybeNullWhen(false)] out T result)
 #else
         public static bool Try<T>(Func<T> func, out T? result)
@@ -135,7 +135,7 @@ namespace Asjc.Utils
         /// <param name="onError">The delegate to be called when an exception occurs.</param>
         /// <param name="result">The return value of <paramref name="func"/> if no exception has occurred; otherwise, <see langword="default"/>.</param>
         /// <returns>A <see langword="bool"/> indicating whether no exception has occurred.</returns>
-#if NETSTANDARD2_1 || NET8_0
+#if NET8_0 || NETCOREAPP3_1 || NETSTANDARD2_1
         public static bool Try<T>(Func<T> func, Action<Exception> onError, [MaybeNullWhen(false)] out T result)
 #else
         public static bool Try<T>(Func<T> func, Action<Exception> onError, out T? result)
@@ -162,7 +162,7 @@ namespace Asjc.Utils
         /// <param name="onError">The delegate to be called when an exception occurs.</param>
         /// <param name="result">The return value of <paramref name="func"/> if no exception has occurred; otherwise, the return value of <paramref name="onError"/>.</param>
         /// <returns>A <see langword="bool"/> indicating whether no exception has occurred.</returns>
-#if NETSTANDARD2_1 || NET8_0
+#if NET8_0 || NETCOREAPP3_1 || NETSTANDARD2_1
         public static bool Try<T>(Func<T> func, Func<Exception, T?> onError, [MaybeNullWhen(false)] out T result)
 #else
         public static bool Try<T>(Func<T> func, Func<Exception, T?> onError, out T? result)

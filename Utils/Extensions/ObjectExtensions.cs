@@ -58,28 +58,28 @@ namespace Asjc.Utils.Extensions
         public static object? TryChangeType(this object? value, TypeCode typeCode, IFormatProvider? provider)
             => Try(() => value.ChangeType(typeCode, provider));
 
-#if NETSTANDARD2_1 || NET8_0
+#if NET8_0 || NETCOREAPP3_1 || NETSTANDARD2_1
         public static bool TryChangeType(this object? value, Type conversionType, [MaybeNullWhen(false)] out object result)
 #else
         public static bool TryChangeType(this object? value, Type conversionType, out object? result)
 #endif
             => Try(() => value.ChangeType(conversionType), out result);
 
-#if NETSTANDARD2_1 || NET8_0
+#if NET8_0 || NETCOREAPP3_1 || NETSTANDARD2_1
         public static bool TryChangeType(this object? value, TypeCode typeCode, [MaybeNullWhen(false)] out object result)
 #else
         public static bool TryChangeType(this object? value, TypeCode typeCode, out object? result)
 #endif
             => Try(() => value.ChangeType(typeCode), out result);
 
-#if NETSTANDARD2_1 || NET8_0
+#if NET8_0 || NETCOREAPP3_1 || NETSTANDARD2_1
         public static bool TryChangeType(this object? value, Type conversionType, IFormatProvider? provider, [MaybeNullWhen(false)] out object result)
 #else
         public static bool TryChangeType(this object? value, Type conversionType, IFormatProvider? provider, out object? result)
 #endif
             => Try(() => value.ChangeType(conversionType, provider), out result);
 
-#if NETSTANDARD2_1 || NET8_0
+#if NET8_0 || NETCOREAPP3_1 || NETSTANDARD2_1
         public static bool TryChangeType(this object? value, TypeCode typeCode, IFormatProvider? provider, [MaybeNullWhen(false)] out object result)
 #else
         public static bool TryChangeType(this object? value, TypeCode typeCode, IFormatProvider? provider, out object? result)
