@@ -14,10 +14,12 @@
         /// <returns><see langword="true"/> if the two source sequences are of equal length and their contents are equal according to the default equality comparer for their type; otherwise, <see langword="false"/>.</returns>
         public static bool ContentEqual<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second)
         {
-            if (first == second)
-                return true;
-            if (first.Count() != second.Count())
-                return false;
+            if (first is ICollection<TSource> firstCol && second is ICollection<TSource> secondCol)
+            {
+                if (firstCol.Count != secondCol.Count)
+                    return false;
+            }
+
             return first.OrderBy(x => x).SequenceEqual(second.OrderBy(x => x));
         }
 
